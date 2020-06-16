@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class PersistenceIntro {
     public static void main(String[] args) throws FileNotFoundException, IOException {
-        Person person = new Person("John Deen", 33, "313/AB");
+        Person person = new Person("John Deen", 33, "313/AB","Bucharest");
         FileWriter fw = new FileWriter("myFile");
         fw.write(person.toString());
         fw.close();
@@ -22,13 +22,15 @@ public class PersistenceIntro {
         Person loadedPerson = new Person(
                     loadedPersonArr[0],
                     Integer.parseInt(loadedPersonArr[1]),
-                    loadedPersonArr[2]
+                    loadedPersonArr[2],
+                    loadedPersonArr[3]
         );
         System.out.println("############ Loaded person ##########");
         System.out.println("Name: "+loadedPerson.getName());
         System.out.println("Age:"+loadedPerson.getAge());
         System.out.println("Pid:"+loadedPerson.getPid());
-        
-        
+        System.out.println("City:"+loadedPerson.getCity());
+
+
     }
 }
